@@ -1,0 +1,7 @@
+Laravel admin and user login and Register 
+composer require Laravel/jetstream
+php artisan jetstream:install livewire
+npm install
+npm run dev
+change in User Table
+php artisan migrate 

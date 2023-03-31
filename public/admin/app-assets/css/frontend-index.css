@@ -1,0 +1,93 @@
+        * {
+                   margin: 0px;
+                   padding: 0px;
+               }
+               .HrStyle hr{
+                     border: 1px solid rgb(90, 102, 90);
+                     border-radius: 4px;
+
+                     width: 55rem;
+                     margin-left:6%;
+                     margin-bottom: 0%;
+                 
+               }
+               .container1
+               {
+                width: 90%;
+                height: auto;
+                margin-left: 5%;
+                
+                
+               }
+              
+               #colums{
+              
+                   background-color: rgb(255, 255, 255);
+
+               }          
+               .card1 {
+                   width: 47%;
+                   display: inline-block;
+                   box-shadow: 2px 2px 20px rgb(231, 229, 229);
+                   border-radius: 2px;
+                   margin: 1%;
+               }
+       
+               .image img {
+                   width: 100%;
+                   height: auto;
+                   border-top-right-radius: 5px;
+                   border-top-left-radius: 5px;
+                   object-fit: cover;
+                   overflow: hidden;         
+                 }
+       
+               .title1 {
+                margin-top:2%; 
+                   text-align: center;
+                   padding: 5px;
+       
+               }
+               .title1 h3 a{
+                text-decoration: none;
+                font-size: 20px;
+               }
+       
+               h1 {
+                   font-size: 20px;
+               }
+       
+               .des {
+                   padding: 3px;
+                   text-align: center;
+       
+                   padding-top: 10px;
+                   border-bottom-right-radius: 5px;
+                   border-bottom-left-radius: 5px;
+               }
+             #navbarheader
+             {
+                width: 60%;
+                
+             }
+             .leftcolumn{
+                width:30%;
+             }
+             .leftcolumn h3{
+                margin-top: 12px;
+                margin-left: 3%;
+             }
+             .rightcolumn{
+                margin-left:50%;
+                margin-top: -4%; 
+                margin-bottom:5px ;
+                background-color: none
+             }
+             .rightcolumn a{
+                color: black;
+                size: 10px
+             }
+             .rightcolumn a:hover{
+                color: rgb(91, 210, 247);
+             }
+

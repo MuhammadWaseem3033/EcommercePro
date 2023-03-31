@@ -1,0 +1,200 @@
+/* Works on Chrome/Edge/Safari */
+::-webkit-scrollbar {
+    width: 17px;
+    height: 17px;
+    background-color: #7367F0;
+}
+
+/*::-webkit-scrollbar-track-piece:vertical {*/
+/*    background-color: #7367F0;*/
+/*}*/
+
+/*::-webkit-scrollbar-track-piece:horizontal {*/
+/*    background-color: #7367F0;*/
+/*}*/
+
+::-webkit-scrollbar-thumb {
+    background-color: #FFF;
+    border-radius: 100px;
+    border: 6px solid #7367F0;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+}
+
+/*
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(66, 66, 66);
+    border: 5px solid #7367F0;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: rgb(100, 100, 100);
+} */
+
+/* ::-webkit-scrollbar-button:single-button {
+    background-color: #fff;
+    display: block;
+    background-size: 10px;
+    background-repeat: no-repeat;
+} */
+
+/* Up */
+/* ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    height: 18px;
+    width: 18px;
+    background-position: center 7px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='rgb(0, 0, 0)'><polygon points='50,00 0,50 100,50'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='rgb(112, 112, 112)'><polygon points='50,00 0,50 100,50'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='rgb(128, 128, 128)'><polygon points='50,00 0,50 100,50'/></svg>");
+} */
+
+/* Down */
+/* ::-webkit-scrollbar-button:single-button:vertical:increment {
+    height: 12px;
+    width: 16px;
+    background-position: center 2px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='0,0 100,0 50,50'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='0,0 100,0 50,50'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:increment:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='0,0 100,0 50,50'/></svg>");
+} */
+
+/* Left */
+/* ::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    height: 12px;
+    width: 12px;
+    background-position: 3px 3px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='0,50 50,100 50,0'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='0,50 50,100 50,0'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:horizontal:decrement:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='0,50 50,100 50,0'/></svg>");
+} */
+
+/* Right */
+/* ::-webkit-scrollbar-button:single-button:horizontal:increment {
+    height: 12px;
+    width: 12px;
+    background-position: 3px 3px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='0,0 0,100 50,50'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='0,0 0,100 50,50'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:horizontal:increment:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='0,0 0,100 50,50'/></svg>");
+} */
+
+span.input-group-text.is-invalid {
+    border-color: #EA5455;
+}
+
+span.input-group-text.is-valid {
+    border-color: green;
+}
+
+.invalid-feedback, .valid-feedback {
+    font-size: 13px !important;
+}
+
+.spin-hover:hover {
+    animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+.bounce,
+.bounce-hover:hover {
+    animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    70% {
+        transform: translateY(0%);
+    }
+    80% {
+        transform: translateY(-15%);
+    }
+    90% {
+        transform: translateY(0%);
+    }
+    95% {
+        transform: translateY(-7%);
+    }
+    97% {
+        transform: translateY(0%);
+    }
+    99% {
+        transform: translateY(-3%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes bounce {
+    70% {
+        transform: translateY(0%);
+    }
+    80% {
+        transform: translateY(-15%);
+    }
+    90% {
+        transform: translateY(0%);
+    }
+    95% {
+        transform: translateY(-7%);
+    }
+    97% {
+        transform: translateY(0%);
+    }
+    99% {
+        transform: translateY(-3%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    max-height: 500px;
+}
+
+.vertical-layout.vertical-menu-modern.menu-expanded .main-menu .navigation li.has-sub > a:after {
+    right: 25px !important;
+}
+
+.invalid-tooltip,
+.valid-tooltip {
+    right: 1rem;
+    top: -7px !important;
+}
