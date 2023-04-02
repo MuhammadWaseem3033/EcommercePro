@@ -141,6 +141,9 @@ class HomeController extends Controller
         $order->delivery_status =$request->delivery;
 
         $order->save();
+        $cart_id = $data->id;
+        $cart = Cart::find($cart_id);
+        $cart->delete();
         return redirect()->back();
        }
       

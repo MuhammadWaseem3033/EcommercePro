@@ -5,3 +5,10 @@ npm install
 npm run dev
 change in User Table
 php artisan migrate 
+# payment gateway in using strip payment
+composer require stripe/stripe-php
+Create a stripe  account 
+change  in the .env
+Make Route 
+Make a view  for payment
+Write code for payment in the Controller 

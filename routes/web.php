@@ -18,10 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::middleware(['auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])
+->group(function (){
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -38,6 +36,10 @@ route::post('/add_cart/{id}',[HomeController::class,'add_cart']);
 Route::get('/show_cart',[HomeController::class,'show_cart']);
 Route::get('/remove-product/{id}',[HomeController::class,'remove_product']);
 Route::get('/cash_order',[HomeController::class,'cash_order']);
+Route::get('/stripe/{totalprice}',[HomeController::class,'stripe'])->name('stripe');
+Route::post('stripe/{totalprice}',[HomeController::class,'stripePost'])->name('stripe.post');
+
+// End Home Page 
 
 //Category Route
 Route::get('/category',[AdminController::class,'show_category'])->name('admin.category');

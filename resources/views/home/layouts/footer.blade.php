@@ -85,5 +85,6 @@
  <script src="{{asset('home/js/bootstrap.js')}}"></script>
  <!-- custom js -->
  <script src="{{asset('home/js/custom.js')}}"></script>
+ @yield('custom_js')
 </body>
 </html>
