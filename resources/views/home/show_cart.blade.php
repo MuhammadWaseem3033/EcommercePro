@@ -42,11 +42,10 @@
                 </div>
             @else
                 <div class="p-3" style="margin-left: 13rem;">
-                    <h1 style="">Total Price :{{ $totalprice }}</h1><br>
+                    <h1 style="background-color:rgb(186, 207, 207);width:40%;padding:10px;border:1px solid rgb(111, 111, 245)">Total Price :{{ $totalprice }}</h1><br>
                 </div>
-                <div class="p-3" style="margin-left: 8rem;">
+                <div class="p-3" style="margin-left: 13rem;">
                     <a href="{{ url('/cash_order') }}" class="btn btn-info">Cash on delivery</a>
-                    <a href="{{url('/stripe',$totalprice )}}" class="btn btn-info">Pay on Card </a>
                 </div>
             @endif
         </div>
