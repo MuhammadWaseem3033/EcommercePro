@@ -136,9 +136,9 @@ class HomeController extends Controller
 
         $order->product_id = $data->product_id;
 
-        $order->payment_status = $request->payment;
+        $order->payment_status = 'cash on delivery';
          
-        $order->delivery_status =$request->delivery;
+        $order->delivery_status = 'Processing';
 
         $order->save();
         $cart_id = $data->id;

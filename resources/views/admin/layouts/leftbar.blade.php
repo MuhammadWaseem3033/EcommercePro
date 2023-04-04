@@ -83,6 +83,12 @@
                     <span class="menu-title text-truncate" data-i18n="Email">Product</span>
                 </a>
             </li>
+            <li class="nav-item {{ request()->routeIs('order') ? 'active' : null }}">
+                <a class="d-flex align-items-center" href="{{route('order')}}">
+                    <i data-feather='codepen'></i>
+                    <span class="menu-title text-truncate" data-i18n="Email">Order</span>
+                </a>
+            </li>
 
 
             {{-- Roles & Permission Menu --}}

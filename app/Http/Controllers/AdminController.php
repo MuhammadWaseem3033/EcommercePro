@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Http\Request;
 use Symfony\Component\CssSelector\Node\FunctionNode;
-
 class AdminController extends Controller
 {
     public function Show_category(){
@@ -43,6 +44,26 @@ class AdminController extends Controller
         $categories = Category::find($id);
         $categories->delete();
         return redirect()->route('admin.category')->with('massage','Category Add Successfully');
+    }
+    public function order()
+    {
+        $orders = Order::all();
+        return view('admin.order.order')->with('orders',$orders);
+    }
+    public function deliver($id)
+    {
+        $order = Order::find($id);
+        $order->delivery_status = "Delivered";
+        $order->payment_status = "paid";
+        $order->save();
+
+        return redirect()->back();
+    }
+    public function print_pdf($id)
+    {
+        $order = Order::find($id);
+        $pdf = FacadePdf::loadView('admin.order.pdf',compact('order'));
+        return  $pdf->download('Order_details.pdf');
     }
     
 }

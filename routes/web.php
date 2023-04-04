@@ -52,3 +52,8 @@ Route::post('/add-product',[ProductController::class,'add_product']);
 Route::get('/delete-product/{id}',[ProductController::class,'delete_product']);
 Route::get('/update-product/{id}',[ProductController::class,'update_product'])->name('updata.product');
 Route::post('/update-product-confirm/{id}',[ProductController::class,'update_product_confirm']);
+// order
+Route::get('/order',[AdminController::class,'order'])->name('order');
+Route::get('/deliver/{id}',[AdminController::class,'deliver']);
+Route::get('/Print-pdf/{id}',[AdminController::class,'print_pdf']);
+// end order
