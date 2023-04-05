@@ -75,18 +75,6 @@ class HomeController extends Controller
         $cart->quantity = $request->quantity;
         
         $cart->save();
-        // $cart = Cart::create([
-        //     'name' => $user->name,
-        //     'email' => $user->email,
-        //     'phone' =>$user->phone,
-        //     'address'=>$user->address,
-        //     'product_title'=>$product->title,
-        //     'quantity'=>$request->quantity,
-        //     'price'=>$product->price,
-        //     'product_id' => $product->id,
-        //     'user_id' => $user->id,
-        //     'image'=>$product->image,
-        // ]);
         return redirect()->back();
 
         }
@@ -158,6 +146,28 @@ class HomeController extends Controller
         return redirect()->back();
        }
       
+    }
+    public function show_order()
+    {
+        if (Auth::id())
+         {
+            $user = Auth::user();
+            $userid  = $user->id;
+            $orders  = Order::where('user_id','=',$userid)->get();
+        return view('home.showOrder',compact('orders'));
+        }
+        else
+        {
+            return redirect('login');
+        }   
+    }
+    public function cancel_order($id)
+    {
+        $order = Order::find($id);
+        $order->delivery_status = 'You Canceled the order';
+        $order->save();
+
+        return redirect()->back(); 
     }
 
     
