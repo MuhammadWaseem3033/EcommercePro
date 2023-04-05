@@ -56,4 +56,5 @@ Route::post('/update-product-confirm/{id}',[ProductController::class,'update_pro
 Route::get('/order',[AdminController::class,'order'])->name('order');
 Route::get('/deliver/{id}',[AdminController::class,'deliver']);
 Route::get('/Print-pdf/{id}',[AdminController::class,'print_pdf']);
+Route::get('/search',[AdminController::class,'search']);
 // end order

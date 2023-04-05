@@ -51,6 +51,11 @@
     {{-- @dd($categories) --}}
     <div class="borderclass">
         <h1 class="text-center">All Order</h1>
+        <form action="{{url('search')}}" method="get">
+            @csrf
+            <input type="search" name="search" id="" placeholder="search Something" class="form-control col-md-3 " style="float: left;margin-right: 5px;margin-left:48rem ;border:2px solid rgb(99, 99, 221);" >
+            <input type="submit" value="search" class="btn btn-primary" style="float:right;">
+        </form>
         <table class="text-center center ">
             <tbody>
                 <tr>

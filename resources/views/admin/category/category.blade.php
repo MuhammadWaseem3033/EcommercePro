@@ -1,6 +1,6 @@
 @extends('admin.layouts.layout')
 
-@section('page-title', 'Product')
+@section('page-title', 'Category')
 
 @section('page-vendor')
     <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/vendors/css/charts/apexcharts.css">

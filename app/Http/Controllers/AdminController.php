@@ -65,5 +65,12 @@ class AdminController extends Controller
         $pdf = FacadePdf::loadView('admin.order.pdf',compact('order'));
         return  $pdf->download('Order_details.pdf');
     }
+    public function search(Request $request)
+    {
+        $searchText = $request->search;
+        $orders = Order::where('name' ,'LIKE' ,"%$searchText%")->get();
+
+        return view('admin.order.order')->with('orders',$orders);
+    }
     
 }
