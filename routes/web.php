@@ -38,6 +38,8 @@ Route::get('/remove-product/{id}',[HomeController::class,'remove_product']);
 Route::get('/cash_order',[HomeController::class,'cash_order']);
 Route::get('/show-order',[HomeController::class,'show_order']);
 Route::get('/cancel-order/{id}',[HomeController::class,'cancel_order']);
+Route::post('/add-comment',[HomeController::class,'add_comment']);
+Route::post('/add-reply',[HomeController::class,'add_reply']);
 // End Home Page 
 
 //Category Route

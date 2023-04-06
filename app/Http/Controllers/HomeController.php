@@ -3,16 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Comment;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Reply;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
 class HomeController extends Controller
 {
+    public function index()
+    {
+        $products = Product::with('category')->paginate(4);
+        $comments = comment::all();
+        $replys = Reply::all(); 
+        return view('home.userpage',compact('comments','replys'))->with('products',$products);
+    }
+
     public function redirect()
     {
         $usertype = Auth::user()->usertype;
+        // $comments = Comment::all();
         if ($usertype == '1') {
             $total_product = Product::all()->count();
             $total_order = Order::all()->count();
@@ -28,16 +39,11 @@ class HomeController extends Controller
                 return view('admin.home' ,compact('total_product','total_order','total_user','total_revinue' , 'order_deliver', 'order_processing'));
         }else {
             $products = Product::with('category')->paginate(4);
-           // dd($products);
-            return view('home.userpage')->with('products',$products);
+        //    dd($products);
+        $comments = comment::orderby('id','desc')->get();
+        $replys = Reply::all();
+           return view('home.userpage',compact('comments','replys'))->with('products',$products);
         }
-    }
-
-    public function index()
-    {
-        $products = Product::with('category')->paginate(4);
-        // dd($products);
-        return view('home.userpage')->with('products',$products);
     }
     public function product_details($id)
     {
@@ -107,9 +113,6 @@ class HomeController extends Controller
     {
        $user = Auth::user();
        $userid = $user->id;
-       $payment = 'cash on delivery';
-       $delivery = 'processing';
-
        $datas = Cart::where('user_id','=',$userid)->get();
 
        foreach ($datas as $data)
@@ -168,6 +171,40 @@ class HomeController extends Controller
         $order->save();
 
         return redirect()->back(); 
+    }
+    public function add_comment(Request $request)
+    {
+        if (Auth::id()) {
+            $comment = new Comment();
+            $comment->name = Auth::user()->name;
+            $comment->user_id = Auth::user()->id;
+            $comment->comment = $request->comment;
+            $comment->save();
+            return redirect()->back();
+
+        } else {
+            return redirect('login');
+        }    
+        
+    }
+    public function add_reply(Request $request)
+    {
+        if (Auth::id()) {
+            $reply = new Reply();
+            $reply->name = Auth::user()->name;
+            $reply->user_id = Auth::user()->id;
+            $reply->comment_id = $request->commentId;
+
+            $reply->reply = $request->reply;
+
+            $reply->save();
+
+            return redirect()->back();
+
+        } else {
+            return redirect('login');
+        }    
+
     }
 
     

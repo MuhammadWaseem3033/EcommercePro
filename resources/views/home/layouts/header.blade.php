@@ -13,6 +13,7 @@
     <meta name="author" content="" />
     <link rel="shortcut icon" href="{{ asset('home/images/favicon.png') }}" type="">
     <title>Fam - Fashion</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('home/css/bootstrap.css') }}" />
     <!-- font awesome style -->
