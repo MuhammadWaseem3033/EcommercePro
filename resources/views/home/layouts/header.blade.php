@@ -27,7 +27,7 @@
 <body>
     <div class="hero_area">
         <!-- header section strats -->
-        <header class="header_section">
+        <header class="header_section" style="background-color: #ad7">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
                     <a class="navbar-brand" href="{{url('/')}}"><img width="200"
@@ -66,11 +66,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('show-order')}}">Order</a>
                             </li>
-                            <form class="form-inline">
-                                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                            </form>
                             @if (Route::has('login'))
                                 @auth
                                     <li class="nav-item">
