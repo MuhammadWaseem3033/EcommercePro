@@ -40,6 +40,9 @@ Route::get('/show-order',[HomeController::class,'show_order']);
 Route::get('/cancel-order/{id}',[HomeController::class,'cancel_order']);
 Route::post('/add-comment',[HomeController::class,'add_comment']);
 Route::post('/add-reply',[HomeController::class,'add_reply']);
+Route::get('/product-search',[HomeController::class,'product_search']);
+Route::get('/search-product',[HomeController::class,'search_product']);
+Route::get('/Products',[HomeController::class,'Products']);
 // End Home Page 
 
 //Category Route

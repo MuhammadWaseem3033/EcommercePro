@@ -52,13 +52,13 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="product.html">Products</a>
+                                <a class="nav-link" href="{{url('Products')}}">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="blog_list.html">Blog</a>
+                                <a class="nav-link" href="#">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
+                                <a class="nav-link" href="#">Contact</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('show_cart')}}">Cart</a>

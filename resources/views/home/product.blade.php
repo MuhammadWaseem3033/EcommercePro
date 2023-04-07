@@ -5,7 +5,15 @@
               <h2>
                   Our <span>products</span>
               </h2>
+              <div>
+                <form action="{{url('product-search')}}" method="get">
+                    @csrf
+                    <input type="text" name="search"  placeholder="Search Product " class="float-left col-md-7">
+                    <input type="submit" value="Search" class="float-right" style="margin-left:5rem;margin-top:-16%;">
+                </form>
+              </div>
           </div>
+          
           <div class="row">
               @foreach ($products as $product)
                   <div class="col-sm-6 col-md-4 col-lg-4" >
@@ -60,7 +68,7 @@
 
           </div><br>
           <div class="row" id="linkspagenate">
-              {!! $products->withQueryString()->links() !!}
+              {!! $products->withQueryString()->links('pagination::bootstrap-5') !!}
           </div>
           <style>
               #linkspagenate {
